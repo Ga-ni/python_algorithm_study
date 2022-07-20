@@ -24,6 +24,12 @@ int main(void)
     printList(10, input);
 
     outForm output = mergeSort(10, input);
+
+    if (output.p == NULL)
+    {
+        return 1;
+    }
+
     free(output.p);
 }
 
@@ -56,6 +62,11 @@ outForm mergeSort(int len, int arr[])
 
     outForm output;
     output.p = malloc(sizeof(int) * len);
+    if (output.p == NULL)
+    {
+        printf("Memory allocation fail.");
+        return output;
+    }
     output.isMalloc = true;
 
     outForm mergedFirst = mergeSort(halfLen, frontHalf);
