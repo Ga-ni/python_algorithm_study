@@ -39,7 +39,7 @@ class DoublyLinkedList:
         else:
             node_to_delete.prev.next = node_to_delete.next
             node_to_delete.next.prev = node_to_delete.prev
-#
+
         return node_to_delete.data
 
     def insert_after(self, previous_node, data):
